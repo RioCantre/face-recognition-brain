@@ -9,7 +9,7 @@ import Clarifai from 'clarifai';
 import './App.css';
 
 const app = new Clarifai.App({
-  apiKey: 'd7eb02ff419f4e738df8872db812448b'
+  apiKey: 'b49e896a4dab47d58f8f3632c053b349',
 });
 
 const particleOptions = {
@@ -36,11 +36,22 @@ class App extends Component {
   }
 
   calculateFaceLocation = (data) => {
-    const clarifaiFace = data.response.outputs[0].data.regions[0].region_info.bounding_box;
+    const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
     const image = document.getElementById('inputImage');
     const width = Number(image.width);
     const height = Number(image.height);
-    console.log(width, height);
+    return {
+      leftCol: clarifaiFace.left_col * width,
+      topRow: clarifaiFace.top_row * height,
+      rightCol: width - (clarifaiFace.right_col * width),
+      bottomRow: height - (clarifaiFace.bottom_row * height)
+
+    }
+  }
+
+  displayFacebox = (box) => {
+    this.setState({ box: box });
+
   }
 
   onInputChange = (event) => {
@@ -49,9 +60,10 @@ class App extends Component {
 
   onButtonSubmit = () => {
     this.setState({ imageUrl: this.state.input})
-    app.models.predict(Clarifai.FACE_DETECT_MODEL, this.state.input)
-      .then(response => this.calculateFaceLocation(response))
-      .catch(err => console.log(err))
+    app.models
+      .predict(Clarifai.FACE_DETECT_MODEL, this.state.input)
+      .then((response) => this.displayFacebox(this.calculateFaceLocation(response)))
+      .catch((err) => console.log(err));
 
     
   }
@@ -60,17 +72,20 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <Particles className='particles'
-          params={particleOptions}
-        />
+        <Particles className='particles' params={particleOptions} />
         <Navigation />
         <Logo />
         <Rank />
         <ImageLinkForm
           onInputChange={this.onInputChange}
           onButtonSubmit={this.onButtonSubmit}
-          />
-        < FaceRecognition imageUrl={ this.state.imageUrl }/>
+        />
+        <FaceRecognition box={this.state.box} imageUrl={this.state.imageUrl} />
+        <div>
+          <footer>
+            <p className='white f6'>CopyRight@2021 - Rio Cantre</p>
+          </footer>
+        </div>
       </div>
     );
 
