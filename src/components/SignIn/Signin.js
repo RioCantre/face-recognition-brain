@@ -53,7 +53,7 @@ class Signin extends React.Component {
                   type='email'
                   name='email-address'
                   id='email-address'
-                  onChange={this.onEmailChange}
+                  onChange={this.props.onEmailChange}
                 />
               </div>
               <div className='mv3'>
@@ -65,7 +65,7 @@ class Signin extends React.Component {
                   type='password'
                   name='password'
                   id='password'
-                  onChange={this.onPasswordChange}
+                  onChange={this.props.onPasswordChange}
                 />
               </div>
             </fieldset>
@@ -78,7 +78,7 @@ class Signin extends React.Component {
               />
             </div>
             <div className='lh-copy mt3'>
-              <p onClick={() => this.props.onRouteChange('register')} className='f6 link dim black db pointer'>
+              <p onClick={() => onRouteChange('register')} className='f6 link dim black db pointer'>
                 Register
               </p>
             </div>
