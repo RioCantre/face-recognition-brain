@@ -3,7 +3,7 @@ import React from 'react';
 
 class Signin extends React.Component {
   constructor(props) {
-    super();
+    super(props);
     this.state = {
       signInEmail: '',
       signInPassword: ''
@@ -33,7 +33,7 @@ class Signin extends React.Component {
           this.props.onRouteChange('home');
         }
       })
-    this.props.onRouteChange('home');
+    // this.props.onRouteChange('home');
 
   }
    render() {
@@ -53,7 +53,7 @@ class Signin extends React.Component {
                   type='email'
                   name='email-address'
                   id='email-address'
-                  onChange={this.props.onEmailChange}
+                  onChange={this.onEmailChange}
                 />
               </div>
               <div className='mv3'>
@@ -65,7 +65,7 @@ class Signin extends React.Component {
                   type='password'
                   name='password'
                   id='password'
-                  onChange={this.props.onPasswordChange}
+                  onChange={this.onPasswordChange}
                 />
               </div>
             </fieldset>
