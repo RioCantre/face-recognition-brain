@@ -7,12 +7,8 @@ import Rank from './components/Rank/Rank';
 import Signin from './components/SignIn/Signin';
 import Register from './components/Register/Register';
 import Particles from 'react-particles-js';
-import Clarifai from 'clarifai';
 import './App.css';
 
-const app = new Clarifai.App({
-  apiKey: 'b49e896a4dab47d58f8f3632c053b349',
-});
 
 const particleOptions = {
   particles: {
@@ -82,27 +78,35 @@ class App extends Component {
   }
 
   onButtonSubmit = () => {
-    this.setState({ imageUrl: this.state.input})
-    app.models
-      .predict(Clarifai.FACE_DETECT_MODEL, this.state.input)
-      .then(response => {
-        if (response) {
-          fetch('http://localhost:3000/image', {
-            method: 'put',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              id: this.state.user.id
-            })
+    this.setState({ imageUrl: this.state.input })
+        fetch('http://localhost:3000/imageurl', {
+          method: 'post',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            input: this.state.input
           })
-            .then(response => response.json())
-            .then(count => {
-              this.setState(Object.assign(this.state.user, { entries: count }))
+        })
+        .then(response => response.json())
+        .then(response => {
+          if (response) {
+            fetch('http://localhost:3000/image', {
+              method: 'put',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                id: this.state.user.id
+              })
             })
-            .catch(console.log)
-        }
-        this.displayFacebox(this.calculateFaceLocation(response))
-      })
-      .catch((err) => console.log(err));
+              .then(response => response.json())
+              .then(count => {
+                this.setState(
+                  Object.assign(this.state.user, { entries: count })
+                );
+              })
+              .catch(console.log);
+          }
+          this.displayFacebox(this.calculateFaceLocation(response));
+        })
+        .catch(err => console.log(err));
 
     
   }

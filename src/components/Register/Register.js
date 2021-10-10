@@ -2,11 +2,11 @@ import React from 'react';
 
 class Register extends React.Component {
   constructor(props) {
-    super();
+    super(props);
     this.state = {
       email: '',
       password: '',
-      name: '',
+      name: ''
     };
   }
 
@@ -30,11 +30,11 @@ class Register extends React.Component {
         email: this.state.email,
         password: this.state.password,
         name: this.state.name
-      }),
+      })
     })
-      .then((response) => response.json())
+      .then(response => response.json())
       .then(user  => {
-        if (user) {
+        if (user.id) {
           this.props.loadUser(user)
           this.props.onRouteChange('home');
         }
