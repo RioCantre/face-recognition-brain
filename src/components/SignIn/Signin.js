@@ -38,13 +38,16 @@ class Signin extends React.Component {
    render() {
     const { onRouteChange } = this.props;
     return (
-      <article className='br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center white'>
-        <main className='pa4 black-80'>
+      <article className='br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center white pa4'>
+        <main className='pa4 black-80 washed-blue'>
           <div className='measure'>
             <fieldset id='sign_up' className='ba b--transparent ph0 mh0'>
-              <legend className='f2 fw6 ph0 mh0'>Sign In</legend>
+              <legend className='f2 fw6 ph0 mh0'> Welcome!</legend>
               <div className='mt3'>
-                <label className='db fw6 lh-copy f6' htmlFor='email-address'>
+                <label
+                  className='pa1 db fw6 lh-copy f6'
+                  htmlFor='email-address'
+                >
                   Email
                 </label>
                 <input
@@ -56,7 +59,7 @@ class Signin extends React.Component {
                 />
               </div>
               <div className='mv3'>
-                <label className='db fw6 lh-copy f6' htmlFor='password'>
+                <label className='pa1 db fw6 lh-copy f6' htmlFor='password'>
                   Password
                 </label>
                 <input
@@ -71,13 +74,16 @@ class Signin extends React.Component {
             <div className=''>
               <input
                 onClick={this.onSubmitSignin}
-                className='b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib'
+                className='b ph3 pv2 input-reset ba b--grey bg-transparent grow pointer f6 dib washed-blue'
                 type='submit'
                 value='Sign in'
               />
             </div>
             <div className='lh-copy mt3'>
-              <p onClick={() => onRouteChange('register')} className='f6 link dim black db pointer'>
+              <p
+                onClick={() => onRouteChange('register')}
+                className='f6 link dim black db pointer washed-blue'
+              >
                 Register
               </p>
             </div>

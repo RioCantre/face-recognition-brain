@@ -1,0 +1,16 @@
+nav {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+.button{
+    font-size: 14px;
+    padding: 20px;
+    background-color: #022446;
+    margin: 10px;
+    text-decoration: none;
+    margin-top: 40px;
+    border-radius: 30px;
+    width: 100px;
+}

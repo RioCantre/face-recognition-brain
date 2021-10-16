@@ -150,11 +150,6 @@ class App extends Component {
             onRouteChange={this.onRouteChange}/>
       
         )}
-        <div>
-          <footer>
-            <p className='white f6'>CopyRight@2021 - Rio Cantre</p>
-          </footer>
-        </div>
       </div>
     );
 
