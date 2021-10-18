@@ -6,12 +6,15 @@ const Navigation = ({ onRouteChange, isSignedIn }) => {
 
     if (isSignedIn) {
         return (
-                <nav style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                    <p onClick={() => onRouteChange('signout')} className='f3 link dim pa4 pointer '>
-                        Sign Out
-                    </p>
-                </nav>
-            );
+          <nav >
+            <p
+              onClick={() => onRouteChange('signout')}
+              className='link dim pointer washed-blue button'
+            >
+              Sign Out
+            </p>
+          </nav>
+        );
         } else {
             return (
                     <nav >

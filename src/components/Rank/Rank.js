@@ -3,6 +3,9 @@ import React from 'react';
 const Rank = ({ name, entries}) => {
   return (
     <div>
+        <div className='f1 white'>
+          {`Welcome to Faceventure!`}
+        </div>
         <div className='white f3'>
            {`${name}, your current entry count is ...`}   
         </div>
