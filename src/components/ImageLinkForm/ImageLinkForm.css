@@ -7,6 +7,7 @@
     background-image:  linear-gradient(30deg, #EA9D5B 12%, transparent 12.5%, transparent 87%, #EA9D5B 87.5%, #EA9D5B), linear-gradient(150deg, #EA9D5B 12%, transparent 12.5%, transparent 87%, #EA9D5B 87.5%, #EA9D5B), linear-gradient(30deg, #EA9D5B 12%, transparent 12.5%, transparent 87%, #EA9D5B 87.5%, #EA9D5B), linear-gradient(150deg, #EA9D5B 12%, transparent 12.5%, transparent 87%, #EA9D5B 87.5%, #EA9D5B), linear-gradient(60deg, #EA9D5B77 25%, transparent 25.5%, transparent 75%, #EA9D5B77 75%, #EA9D5B77), linear-gradient(60deg, #EA9D5B77 25%, transparent 25.5%, transparent 75%, #EA9D5B77 75%, #EA9D5B77);
     background-size: 60px 105px;
     background-position: 0 0, 0 0, 30px 53px, 30px 53px, 0 0, 30px 53px;
+    margin-top: 0;
 }
 .f3 {
     color: white;
