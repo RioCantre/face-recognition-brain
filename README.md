@@ -1,9 +1,21 @@
-# Face Recognition Brain
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Faceventure (Face Recognition Brain) 
 
+## Overview
+This project uses an API that requires the user to detect faces on images. It only reads on jpeg format and shows the number of entries.
 
-Clone the project and then you can run:
+## Technology used
 
-`1. npm install`
+- React
+- HTML5
+- CSS3
+- Tachyons
+- Clarifai API
 
-`2. npm start`
+## Install locally
+```
+// In the terminal, run the following commands
+
+npm install
+npm start
+```
+
