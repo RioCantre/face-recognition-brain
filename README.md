@@ -12,6 +12,9 @@ This project uses an API that requires the user to detect faces on images. It on
 - Clarifai API
 - SQL
 
+## Screenshot
+
+![Screenshot](Faceventure.jpg)
 ## Install locally
 
 ```
@@ -21,4 +24,10 @@ npm install
 npm start
 
 ```
+
+[Backend Server](https://github.com/RioCantre/smart-brain-api)
+
+## Credits
+[The Complete Web Developer in 2022: Zero to Mastery](https://academy.zerotomastery.io/p/complete-web-developer-zero-to-mastery)
+
 
