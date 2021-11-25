@@ -30,4 +30,8 @@ npm start
 ## Credits
 [The Complete Web Developer in 2022: Zero to Mastery](https://academy.zerotomastery.io/p/complete-web-developer-zero-to-mastery)
 
+<hr>
+
+### ✨ [Portfolio Preview](https://github.com/RioCantre/rioc-portfolio/blob/main/README.md) 
+
 
